@@ -1,0 +1,85 @@
+Metadata-Version: 2.1
+Name: nlp2fn
+Version: 0.0.1
+Summary: Jennie-AI is a pioneering Python library that enables you to use simple English commands to execute Python code. This transformative tool leverages Natural Language Processing (NLP) to automate and streamline your development process.
+Home-page: https://github.com/Ask-Jennie/jennie
+Author: Jennie Developers <saurabh@ask-jennie.com>
+Author-email: Jennie Developers <saurabh@ask-jennie.com>
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+
+# Jennie-AI
+
+Jennie-AI is a pioneering Python library that enables you to use simple English commands to execute Python code. This transformative tool leverages Natural Language Processing (NLP) to automate and streamline your development process. 
+
+## Core Functionality
+
+Jennie-AI works by mapping English language statements to specific Python functions. When an NLP statement is invoked, Jennie-AI triggers the corresponding function. Let's understand this by an example.
+
+## Using Jennie-AI: An Example
+
+Let's dive into an example to see how easy it is to automate tasks with Jennie-AI. We'll create a function to download files from a link to a specified directory. 
+
+You'll first need to write your function and link it with an NLP statement, like this:
+
+```python
+import os
+import requests, shutil
+
+statement = "download {link} to {output_dir}"
+
+def execute(args):
+    file = args[0]
+    output = args[1]
+    if file.split(".")[-1] in ["jpg", "png", "jpeg"]:
+        res = requests.get(file, stream=True)
+        if res.status_code == 200:
+            with open(output, 'wb') as f:
+                shutil.copyfileobj(res.raw, f)
+    else:
+        response = requests.get(file).text
+        open(os.path.join(os.getcwd(), output), "w").write(response)
+    return True
+```
+
+Once you've created your function, you can add it to your function gallery source. To do this, you'll need to install Jennie-AI from pip and set the function source directory:
+
+```shell
+pip install jennie-ai
+jennie-ai fnc-source /path/to/directory
+```
+
+The function file should be added to the directory you've specified in the `fnc-source` command. Now, you're all set to execute your function using Jennie-AI.
+
+```shell
+jennie-ai fnc-source run
+```
+
+When you run this command, you'll be prompted to enter your command:
+
+```shell
+What do you want me to do?
+>> download https://people.sc.fsu.edu/~jburkardt/data/csv/biostats.csv to output/biostats.csv
+```
+
+Jennie-AI will then execute your command:
+
+```shell
+Executing download files
+link: https://people.sc.fsu.edu/~jburkardt/data/csv/biostats.csv
+output_dir: output/biostats.csv
+```
+
+And voila! Your file is downloaded to the specified directory.
+
+**Use can also use the function**
+
+```
+jennie fnc-source -m 'download https://people.sc.fsu.edu/~jburkardt/data/csv/biostats.csv to output/biostats.csv'
+```
+
+## Conclusion
+
+Jennie-AI simplifies coding and automation, making it an invaluable tool for developers looking to streamline their workflows. It also opens up endless possibilities for customization, enabling developers to build their own unique automation gallery. So, what are you waiting for? Install Jennie-AI today and transform the way you code!

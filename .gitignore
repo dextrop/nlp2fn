@@ -1,0 +1,9 @@
+venv/
+.idea/
+.DS_Store
+*/.DS_Store
+dist/
+tests/
+test.py
+main.py
+ nlp2fn.egg-info/

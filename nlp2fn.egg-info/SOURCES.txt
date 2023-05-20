@@ -1,0 +1,16 @@
+README.md
+setup.py
+nlp2fn/__init__.py
+nlp2fn/constants.py
+nlp2fn/fncloader.py
+nlp2fn.egg-info/PKG-INFO
+nlp2fn.egg-info/SOURCES.txt
+nlp2fn.egg-info/dependency_links.txt
+nlp2fn.egg-info/entry_points.txt
+nlp2fn.egg-info/requires.txt
+nlp2fn.egg-info/top_level.txt
+nlp2fn/utils/__init__.py
+nlp2fn/utils/colorpriniting.py
+nlp2fn/utils/commands.py
+nlp2fn/utils/configparser.py
+nlp2fn/utils/detectenv.py
