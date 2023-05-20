@@ -1,74 +1,72 @@
-# Python Automation Tool : nlp2fn
+Here's a refined and structured README for the `nlp2fn` project:
 
-nlp2fn is a pioneering Python library that enables you to use simple English commands to execute Python code. This transformative tool leverages Natural Language Processing (NLP) to automate and streamline your development process. 
+---
 
-## Core Functionality
+# nlp2fn: Python Automation Made Simple
 
-nlp2fn works by mapping English language statements to specific Python functions. When an NLP statement is invoked, nlp2fn triggers the corresponding function. Let's understand this by an example.
+Welcome to `nlp2fn`, a seamless and intuitive software tool for Python automation. With the ability to load and read Python functions from any specified location, `nlp2fn` brings all your automation tasks together. Whether your functions reside in local directories or remote servers, `nlp2fn` fetches, loads, and prepares them for execution — as simple as a statement.
 
-## Using nlp2fn: An Example
+## The Magic of nlp2fn
 
-Let's dive into an example to see how easy it is to automate tasks with nlp2fn. We'll create a function to download files from a link to a specified directory. 
-
-You'll first need to write your function and link it with an NLP statement, like this:
+A typical function for `nlp2fn` follows this format:
 
 ```python
 import os
 import requests, shutil
 
+# The function statement
 statement = "download {link} to {output_dir}"
 
 def execute(args):
     file = args[0]
     output = args[1]
-    if file.split(".")[-1] in ["jpg", "png", "jpeg"]:
-        res = requests.get(file, stream=True)
-        if res.status_code == 200:
-            with open(output, 'wb') as f:
-                shutil.copyfileobj(res.raw, f)
-    else:
-        response = requests.get(file).text
-        open(os.path.join(os.getcwd(), output), "w").write(response)
+    # Continue with the function to download the file to the output location.
     return True
 ```
 
-Once you've created your function, you can add it to your function gallery source. To do this, you'll need to install nlp2fn from pip and set the function source directory:
+The `execute` function is the heart of the operation where the actual task takes place.
 
-```shell
-pip install nlp2fn
+## Quick Start Guide
+
+Here's how to install and get started with `nlp2fn`:
+
+```bash
+git clone https://github.com/dextrop/nlp2fn.git
+cd nlp2fn
+pip install .
+```
+
+Next, add the source directory where your Python functions are located:
+
+```bash
 nlp2fn set source /path/to/directory
 ```
 
-Now, you're all set to execute your function using nlp2fn.
+Ready to launch `nlp2fn` as a chatbot? Use this command:
 
-```shell
+```bash
 nlp2fn run
 ```
 
-When you run this command, you'll be prompted to enter your command:
+To run a single statement, use the `exec` command:
 
-```shell
-What do you want me to do?
->> download https://people.sc.fsu.edu/~jburkardt/data/csv/biostats.csv to output/biostats.csv
+```bash
+nlp2fn exec -m "statement"
 ```
 
-nlp2fn will then execute your command:
+If you need to reset your sources, simply use the `reset` command:
 
-```shell
-Executing download files
-link: https://people.sc.fsu.edu/~jburkardt/data/csv/biostats.csv
-output_dir: output/biostats.csv
+```bash
+nlp2fn reset
 ```
 
-And voila! Your file is downloaded to the specified directory.
+## Join the Development
 
-**Use can also use the function in other way**
+We welcome your contributions! Feel free to submit pull requests and create issues on our [GitHub page](https://github.com/dextrop/nlp2fn/issues).
 
-- Single Command
-```
-nlp2fn exec -m 'download https://people.sc.fsu.edu/~jburkardt/data/csv/biostats.csv to output/biostats.csv'
-```
+## Contact
 
-## Conclusion
+For questions, suggestions, or any kind of discussion, feel free to open an issue on our GitHub page.
 
-nlp2fn simplifies coding and automation, making it an invaluable tool for developers looking to streamline their workflows. It also opens up endless possibilities for customization, enabling developers to build their own unique automation gallery. So, what are you waiting for? Install nlp2fn today and transform the way you code!
+Embrace the simplification of Python automation with `nlp2fn`.
+\
