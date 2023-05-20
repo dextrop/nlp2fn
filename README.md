@@ -1,7 +1,3 @@
-Here's a refined and structured README for the `nlp2fn` project:
-
----
-
 # nlp2fn: Python Automation Made Simple
 
 Welcome to `nlp2fn`, a seamless and intuitive software tool for Python automation. With the ability to load and read Python functions from any specified location, `nlp2fn` brings all your automation tasks together. Whether your functions reside in local directories or remote servers, `nlp2fn` fetches, loads, and prepares them for execution — as simple as a statement.
