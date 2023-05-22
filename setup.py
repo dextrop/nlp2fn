@@ -1,7 +1,7 @@
 import setuptools
 
 __version__ = "0.0.1"
-__description__ = 'Jennie-AI is a pioneering Python library that enables you to use simple English commands to execute Python code. This transformative tool leverages Natural Language Processing (NLP) to automate and streamline your development process.'
+__description__ = 'With the ability to load and read Python functions from any specified location, `nlp2fn` brings all your automation tasks together.'
 __author__ = 'Jennie Developers <saurabh@ask-jennie.com>'
 
 with open("README.md", "r") as fh:
@@ -22,7 +22,7 @@ setuptools.setup(
      description= __description__,
      long_description=long_description,
      long_description_content_type="text/markdown",
-     url="https://github.com/Ask-Jennie/jennie",
+     url="https://github.com/dextrop/nlp2fn",
      packages=setuptools.find_packages(),
      classifiers=[
          "License :: OSI Approved :: MIT License",

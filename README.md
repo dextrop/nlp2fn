@@ -1,4 +1,4 @@
-# nlp2fn: Python Automation Made Simple
+# Python Automation Made Simple: nlp2fn
 
 Welcome to `nlp2fn`, a seamless and intuitive software tool for Python automation. With the ability to load and read Python functions from any specified location, `nlp2fn` brings all your automation tasks together. Whether your functions reside in local directories or remote servers, `nlp2fn` fetches, loads, and prepares them for execution — as simple as a statement.
 
@@ -7,16 +7,18 @@ Welcome to `nlp2fn`, a seamless and intuitive software tool for Python automatio
 A typical function for `nlp2fn` follows this format:
 
 ```python
-import os
-import requests, shutil
-
-# The function statement
+# Write you execute statement, this shall be an 
+# input by user to execute your events, make sure all the 
+# parameters that are required by event is properly captured with {param_name}.
 statement = "download {link} to {output_dir}"
 
+
+# This shall be the main function for your event. once 
 def execute(args):
     file = args[0]
-    output = args[1]
-    # Continue with the function to download the file to the output location.
+    output_dir = args[1]
+    
+    # Complete the function.
     return True
 ```
 
@@ -24,12 +26,10 @@ The `execute` function is the heart of the operation where the actual task takes
 
 ## Quick Start Guide
 
-Here's how to install and get started with `nlp2fn`:
+Here's how to install and get started with [`nlp2fn`]()f:
 
 ```bash
-git clone https://github.com/dextrop/nlp2fn.git
-cd nlp2fn
-pip install .
+pip install nlp2fn
 ```
 
 Next, add the source directory where your Python functions are located:
@@ -65,4 +65,3 @@ We welcome your contributions! Feel free to submit pull requests and create issu
 For questions, suggestions, or any kind of discussion, feel free to open an issue on our GitHub page.
 
 Embrace the simplification of Python automation with `nlp2fn`.
-\

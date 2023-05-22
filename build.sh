@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Removing Old Files"
-rm -rf build dist ask_jennie.egg-info
+rm -rf dist nlp2fn.egg-info
 
 echo "Start Building"
 python -m build

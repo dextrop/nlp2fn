@@ -1,2 +1,0 @@
-[console_scripts]
-nlp2fn = nlp2fn:execute
