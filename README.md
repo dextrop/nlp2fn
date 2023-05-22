@@ -65,3 +65,7 @@ We welcome your contributions! Feel free to submit pull requests and create issu
 For questions, suggestions, or any kind of discussion, feel free to open an issue on our GitHub page.
 
 Embrace the simplification of Python automation with `nlp2fn`.
+
+## Events
+
+- Langchain Automations : https://github.com/dextrop/evt-langchain
