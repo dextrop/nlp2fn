@@ -1,4 +1,4 @@
-# Python Automation Made Simple: nlp2fn
+# Python Automation Made Simple: [nlp2fn](https://pypi.org/project/nlp2fn/)
 
 Welcome to `nlp2fn`, a seamless and intuitive software tool for Python automation. With the ability to load and read Python functions from any specified location, `nlp2fn` brings all your automation tasks together. Whether your functions reside in local directories or remote servers, `nlp2fn` fetches, loads, and prepares them for execution — as simple as a statement.
 
@@ -26,7 +26,7 @@ The `execute` function is the heart of the operation where the actual task takes
 
 ## Quick Start Guide
 
-Here's how to install and get started with [`nlp2fn`]()f:
+Here's how to install and get started with [`nlp2fn`](https://pypi.org/project/nlp2fn/):
 
 ```bash
 pip install nlp2fn
