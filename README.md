@@ -2,6 +2,7 @@
 
 Welcome to `nlp2fn`, a seamless and intuitive software tool for Python automation. With the ability to load and read Python functions from any specified location, `nlp2fn` brings all your automation tasks together. Whether your functions reside in local directories or remote servers, `nlp2fn` fetches, loads, and prepares them for execution — as simple as a statement.
 
+
 ## The Magic of nlp2fn
 
 A typical function for `nlp2fn` follows this format:
@@ -69,3 +70,4 @@ Embrace the simplification of Python automation with `nlp2fn`.
 ## Events
 
 - Langchain Automations : https://github.com/dextrop/evt-langchain
+- https://medium.com/@askjennie/creating-your-own-automation-library-with-nlp2fn-6657b1276361
