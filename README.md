@@ -36,8 +36,17 @@ pip install nlp2fn
 Next, add the source directory where your Python functions are located:
 
 ```bash
-nlp2fn set source /path/to/directory
+nlp2fn set-source local /path/to/directory
 ```
+
+or 
+
+```bash
+nlp2fn set-source git https://github.com/{githubid}/{repo}
+```
+
+make sure repo is public.
+
 
 Ready to launch `nlp2fn` as a chatbot? Use this command:
 

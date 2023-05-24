@@ -6,4 +6,6 @@ dist/
 tests/
 test.py
 main.py
- nlp2fn.egg-info/
+nlp2fn.egg-info/
+*/*__pycache__
+*.pyc

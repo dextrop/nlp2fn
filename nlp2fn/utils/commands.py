@@ -1,6 +1,7 @@
 COMMANDS = {
-    "set": {
-        "source": "set_function_source",
+    "set-source": {
+        "local": "set_local_source",
+        "git": "set_github_source",
     },
     "run": "run",
     "reset": "reset",

@@ -1,7 +1,8 @@
 import os
+from nlp2fn.utils.colorpriniting import error
 
 # Set up the location of the configuration file.
-TOKEN_PATH = os.path.expanduser("~/.jennie-ai.conf.json")
+TOKEN_PATH = os.path.expanduser("~/.nlp2fn.conf.json")
 
 
 def get_py_fnc_dir():
@@ -42,10 +43,13 @@ def update_py_fnc_dir(directory):
     """
 
     # If the directory doesn't start with "http", assume it's a filesystem path.
-    if not directory.startswith("http"):
-        # Check if the local directory exists. If not, return without doing anything.
-        if not os.path.exists(directory):
-            raise ValueError(f"Directory {directory} does not exits")
+    if not os.path.exists(directory):
+        raise ValueError(f"Directory {directory} does not exits")
+
+    lines = open(TOKEN_PATH).read().splitlines()
+    if directory in lines:
+        error("Source Already Exits")
+        return
 
     with open(TOKEN_PATH, 'a') as file:
         file.write(f"{directory}\n")

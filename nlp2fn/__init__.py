@@ -3,11 +3,17 @@ from nlp2fn.utils.commands import COMMANDS, map_command_to_function
 from nlp2fn.fncloader import FunctionLoader
 from nlp2fn.utils import update_py_fnc_dir, get_py_fnc_dir, delete_py_fnc_dir_info
 from nlp2fn.utils.colorpriniting import error
+from nlp2fn.clonefromgit import GitEvents
 
 fnLoader = FunctionLoader()
 
 def reset_src_dir(args):
     delete_py_fnc_dir_info()
+
+def set_github_source(args):
+    if len(args) < 1:
+        raise ValueError("Missing Githib link.")
+    GitEvents(args[0])
 
 def set_source_dir(args):
     if len(args) < 1:
@@ -17,7 +23,10 @@ def set_source_dir(args):
     if not os.path.exists(directory) and directory[:4] != "http":
         raise ValueError(f"Directory {directory} does not exits")
 
-    update_py_fnc_dir(directory)
+    if os.path.expanduser("~/") in directory:
+        update_py_fnc_dir(directory)
+    else:
+        update_py_fnc_dir(os.path.join(os.getcwd(), directory))
 
 def run(args):
     directories = get_py_fnc_dir()
@@ -47,8 +56,10 @@ def run_command(args):
 def execute():
     try:
         fn_name, args = map_command_to_function(sys.argv[1:], COMMANDS)
-        if fn_name == "set_function_source":
+        if fn_name == "set_local_source":
             return set_source_dir(args)
+        elif fn_name == "set_github_source":
+            return set_github_source(args)
         elif fn_name == "run":
             return run(args)
         elif fn_name == "run_single_function":
