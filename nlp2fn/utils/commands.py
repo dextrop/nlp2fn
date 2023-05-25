@@ -1,13 +1,12 @@
 COMMANDS = {
-    "set-source": {
-        "local": "set_local_source",
-        "git": "set_github_source",
-    },
+    "add-source": "add_source",
     "run": "run",
     "reset": "reset",
+    "delete": "delete_source",
     "exec": {
         "-m": "run_single_function"
-    }
+    },
+    "update": "update_source"
 }
 
 def map_command_to_function(args, mapping):

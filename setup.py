@@ -1,6 +1,6 @@
 import setuptools
 
-__version__ = "0.0.3"
+__version__ = "0.0.4"
 __description__ = 'With the ability to load and read Python functions from any specified location, `nlp2fn` brings all your automation tasks together.'
 __author__ = 'Jennie Developers <saurabh@ask-jennie.com>'
 

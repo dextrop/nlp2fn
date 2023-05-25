@@ -9,3 +9,4 @@ main.py
 nlp2fn.egg-info/
 */*__pycache__
 *.pyc
+run.sh

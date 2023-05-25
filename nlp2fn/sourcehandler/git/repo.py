@@ -2,11 +2,11 @@ import subprocess
 
 
 class Repo:
-    def __init__(self, path):
+    def __init__(self, working_dir):
         """
         Initializes a Repo object with the given path to the repository.
         """
-        self.path = path
+        self.working_dir = working_dir
 
     def run_command(self, command):
         """
@@ -18,7 +18,7 @@ class Repo:
         Returns:
             str: The output of the command as a string.
         """
-        result = subprocess.run(command, cwd=self.path, capture_output=True, text=True)
+        result = subprocess.run(command, cwd=self.working_dir, capture_output=True, text=True)
         return result.stdout.strip()
 
     def clone(self, url):
@@ -31,7 +31,8 @@ class Repo:
         Returns:
             str: The output of the clone command.
         """
-        return self.run_command(['git', 'clone', url, self.path])
+        name = url.split("/")[-1]
+        return self.run_command(['git', 'clone', url, name])
 
     def commit(self, message):
         """

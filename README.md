@@ -11,7 +11,7 @@ A typical function for `nlp2fn` follows this format:
 # Write you execute statement, this shall be an 
 # input by user to execute your events, make sure all the 
 # parameters that are required by event is properly captured with {param_name}.
-statement = "download {link} to {output_dir}"
+STATEMENT = "download {link} to {output_dir}"
 
 
 # This shall be the main function for your event. once 
@@ -36,13 +36,13 @@ pip install nlp2fn
 Next, add the source directory where your Python functions are located:
 
 ```bash
-nlp2fn set-source local /path/to/directory
+nlp2fn add-source /path/to/directory
 ```
 
 or 
 
 ```bash
-nlp2fn set-source git https://github.com/{githubid}/{repo}
+nlp2fn add-source https://github.com/{githubid}/{repo}
 ```
 
 make sure repo is public.
@@ -66,9 +66,25 @@ If you need to reset your sources, simply use the `reset` command:
 nlp2fn reset
 ```
 
+If you need to remove any source your sources, simply use the `delete ` command:
+
+```bash
+nlp2fn delete
+```
+
+If you need to update the source, both remote or local use `update` command
+
+```bash
+nlp2fn update
+```
+
 ## Join the Development
 
 We welcome your contributions! Feel free to submit pull requests and create issues on our [GitHub page](https://github.com/dextrop/nlp2fn/issues).
+
+## View ChangeLog
+
+[GitHub Release page](https://github.com/dextrop/nlp2fn/blob/main/CHANGELOG.md).
 
 ## Contact
 

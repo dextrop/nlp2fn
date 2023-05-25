@@ -46,6 +46,9 @@ def update_py_fnc_dir(directory):
     if not os.path.exists(directory):
         raise ValueError(f"Directory {directory} does not exits")
 
+    if not os.path.exists(TOKEN_PATH):
+        open(TOKEN_PATH, "w").write("")
+
     lines = open(TOKEN_PATH).read().splitlines()
     if directory in lines:
         error("Source Already Exits")
@@ -57,6 +60,9 @@ def update_py_fnc_dir(directory):
     return get_py_fnc_dir()
 
 def delete_py_fnc_dir_info():
-    os.remove(TOKEN_PATH)
+    try:
+        os.remove(TOKEN_PATH)
+    except Exception as e:
+        pass
 
 
