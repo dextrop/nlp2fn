@@ -95,4 +95,4 @@ Embrace the simplification of Python automation with `nlp2fn`.
 ## Events
 
 - Langchain Automations : https://github.com/dextrop/evt-langchain
-- https://medium.com/@askjennie/creating-your-own-automation-library-with-nlp2fn-6657b1276361
+- Video Editing events : https://github.com/dextrop/pyveditor
